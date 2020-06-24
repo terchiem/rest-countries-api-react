@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import CountryCard from './CountryCard';
 
 /**
  * Presentational component that displays a list of CountryCards
@@ -7,7 +9,16 @@ import React from 'react';
 
 function CountryList({ countries }) {
 
-  const countryCards = [];
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filterRegion, setFilterRegion] = useState(null);
+
+  const countryList = Object.keys(countries);
+
+
+  /** Creates a CountryCard for each country */
+  function renderCountries() {
+    return countryList.map(code => <CountryCard key={code} country={countries[code]} />)
+  }
 
   return (
     <div className="CountryList">
@@ -19,8 +30,8 @@ function CountryList({ countries }) {
         </select>
       </div>
 
+      { renderCountries() }
 
-      {countryCards}
     </div>
   )
 }

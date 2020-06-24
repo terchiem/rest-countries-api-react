@@ -5,9 +5,14 @@ import React from 'react';
  */
 
 function CountryCard({ country }) {
+  const { name, population, region, capital, flag } = country;
   return (
     <div className="CountryCard">
-      I am a country card
+      <img src={flag} alt={name} className="CountryCard-flag" />
+      <h3>{name}</h3>
+      <p>Population: {population}</p>
+      <p>Region: {region}</p>
+      <p>Capital: {capital}</p>
     </div>
   )
 }
