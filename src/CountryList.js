@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '@fortawesome/fontawesome-free';
 import './CountryList.css';
 
 import CountryCard from './CountryCard';

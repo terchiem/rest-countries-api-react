@@ -1,11 +1,14 @@
 .CountryList {
-  max-width: 100%;
-  margin: 10px 30px;
+  max-width: 1440px;
+  margin: 10px auto;
+  padding: 30px;
+  border: 1px solid blue;
 }
 
 .CountryList-filter {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 40px;
 }
 
 .CountryList-filter * {
@@ -20,9 +23,17 @@
   width: 300px;
 }
 
-.CountryList-container {
+/* .CountryList-container {
   display: grid;
   grid-template-columns: repeat(4, minmax(264px, 1fr));
   justify-items: center;
-  gap: 60px 0;
+  gap: 40px;
+} */
+
+
+.CountryList-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
 }

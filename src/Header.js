@@ -11,7 +11,7 @@ function Header() {
         Where in the world?
       </div>
       <div className="Header-theme-toggle">
-        ☾ Dark Mode
+        ☾ Dark Mode <i class="far fa-moon"></i>
       </div>
     </div>
   )
