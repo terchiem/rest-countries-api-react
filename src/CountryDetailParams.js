@@ -10,7 +10,7 @@ function CountryDetailParams({ countries }) {
   const { code } = useParams();
 
   return countries[code] ?
-    <CountryDetail country={countries[code]} /> :
+    <CountryDetail countries={countries} country={countries[code]} /> :
     <Redirect to="/" />;
 }
 
