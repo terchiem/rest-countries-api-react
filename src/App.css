@@ -1,0 +1,4 @@
+html {
+  --max-width-desktop: 1440px;
+  --max-width-mobile: 375px;
+}

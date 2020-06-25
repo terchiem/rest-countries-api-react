@@ -1,0 +1,17 @@
+.Header {
+  padding: 20px 0;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+}
+
+.Header-content {
+  max-width: var(--max-width-desktop);
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Header-theme-toggle {
+  font-size: 1.2rem;
+  cursor: pointer;
+}

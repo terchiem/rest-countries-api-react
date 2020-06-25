@@ -1,8 +1,7 @@
 .CountryList {
-  max-width: 1440px;
-  margin: 10px auto;
-  padding: 30px;
-  border: 1px solid blue;
+  max-width: var(--max-width-desktop);
+  margin: 40px auto;
+  padding: 0 30px;
 }
 
 .CountryList-filter {
@@ -22,14 +21,6 @@
 .CountryList-filter select {
   width: 300px;
 }
-
-/* .CountryList-container {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(264px, 1fr));
-  justify-items: center;
-  gap: 40px;
-} */
-
 
 .CountryList-container {
   display: flex;
