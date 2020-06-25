@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './CountryList.css';
 
 import CountryCard from './CountryCard';
 
@@ -23,14 +24,16 @@ function CountryList({ countries }) {
   return (
     <div className="CountryList">
 
-      <div className="CountryFilter">
+      <div className="CountryList-filter">
         <input type="text" />
         <select name="region" id="region">
           <option value="hello">Hello</option>
         </select>
       </div>
 
-      { renderCountries() }
+      <div className="CountryList-container">
+        {renderCountries()}
+      </div>
 
     </div>
   )
