@@ -6,12 +6,13 @@ import Header from './Header';
 import Routes from './Routes';
 import LoadingSpinner from './LoadingSpinner';
 
+const BASE_URL = "https://restcountries.eu/rest/v2/all";
+
 /**
  * Main app for REST Countries. Fetches all country data from API on mount.
  */
 
 function App() {
-  const BASE_URL = "https://restcountries.eu/rest/v2/all";
 
   const [countries, setCountries] = useState({});
   const [dataLoaded, setDataLoaded] = useState(false);

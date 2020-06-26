@@ -11,11 +11,16 @@
 }
 
 .CountryList-filter * {
-  height: 2rem;
+  height: 3rem;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
+  font-size: 16px;
 }
 
 .CountryList-filter input {
   min-width: 400px;
+  padding-left: 40px;
 }
 
 .CountryList-filter select {
