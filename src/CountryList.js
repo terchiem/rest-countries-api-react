@@ -14,11 +14,18 @@ function CountryList({ countries }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterRegion, setFilterRegion] = useState(null);
 
-  const countryList = Object.keys(countries);
 
 
   /** Creates a CountryCard for each country */
   function renderCountries() {
+    const countryList = Object.keys(countries);
+
+    // fill list with dummies until rows full
+    const dummies = countryList.length % 4;
+    for (let i = 1; i <= dummies; i++) {
+      countryList.push(`D-${i}`);
+    }
+
     return countryList.map(code => <CountryCard key={code} country={countries[code]} />)
   }
 

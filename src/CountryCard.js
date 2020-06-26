@@ -8,6 +8,8 @@ import './CountryCard.css';
  */
 
 function CountryCard({ country }) {
+  if (!country) return <div className="CountryCard blank"></div>;
+
   const { name, code, population, region, capital, flag } = country;
   return (
     <Link className="CountryCard-link" to={`/country/${code}`}>
