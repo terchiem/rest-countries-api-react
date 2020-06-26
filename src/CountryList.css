@@ -11,7 +11,8 @@
   margin-bottom: 40px;
 }
 
-.CountryList-filter * {
+.CountryList-filter input,
+.CountryList-filter select {
   height: 3rem;
   border-radius: 4px;
   border: none;
@@ -24,12 +25,18 @@
 
 .CountryList-filter input {
   min-width: 400px;
-  padding-left: 40px;
+  padding-left: 50px;
 }
 
 .CountryList-filter select {
   width: 200px;
   padding-left: 20px;
+}
+
+.CountryList-search i {
+  color: var(--input-color);
+  position: relative;
+  left: 30px;
 }
 
 .CountryList-container {

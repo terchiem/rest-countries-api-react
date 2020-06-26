@@ -56,14 +56,17 @@ function CountryList({ countries }) {
     <div className="CountryList">
 
       <div className="CountryList-filter">
-        <input
-          type="text"
-          name="search"
-          ariaLabel="Search"
-          value={searchTerm}
-          placeholder="Search for a country..."
-          onChange={handleChange}
-        />
+        <div className="CountryList-search">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <input
+            type="text"
+            name="search"
+            ariaLabel="Search"
+            value={searchTerm}
+            placeholder="Search for a country..."
+            onChange={handleChange}
+          />
+        </div>
         <select
           name="region"
           id="region"
