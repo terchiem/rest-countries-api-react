@@ -2,6 +2,7 @@
   max-width: var(--max-width-desktop);
   margin: 40px auto;
   padding: 0 30px;
+  font-size: 14px;
 }
 
 .CountryList-filter {
@@ -16,6 +17,9 @@
   border: none;
   box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
   font-size: 16px;
+  background-color: var(--element-color);
+  color: var(--input-color);
+  transition: background-color 0.2s, color 0.5s;
 }
 
 .CountryList-filter input {
@@ -24,7 +28,8 @@
 }
 
 .CountryList-filter select {
-  width: 300px;
+  width: 200px;
+  padding-left: 20px;
 }
 
 .CountryList-container {

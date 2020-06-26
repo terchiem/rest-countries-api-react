@@ -5,6 +5,7 @@ import './App.css';
 import Header from './Header';
 import Routes from './Routes';
 import LoadingSpinner from './LoadingSpinner';
+import THEME from './themes';
 
 const BASE_URL = "https://restcountries.eu/rest/v2/all";
 
@@ -16,8 +17,9 @@ function App() {
 
   const [countries, setCountries] = useState({});
   const [dataLoaded, setDataLoaded] = useState(false);
+  const [theme, setTheme] = useState("light");
 
-
+  // fetch all countries from API and format for state
   useEffect(() => {
     async function getCountries() {
       try {
@@ -51,10 +53,20 @@ function App() {
     getCountries();
   }, []);
 
+  // handle theme switching
+  useEffect(() => {
+    const currentTheme = THEME[theme];
+
+    Object.keys(currentTheme).forEach(k => {
+      const key = `--${k}`;
+      const value = currentTheme[k];
+      document.body.style.setProperty(key, value);
+    });
+  }, [theme]);
 
   return (
     <div className="App">
-      <Header />
+      <Header theme={theme} setTheme={setTheme} />
 
       {dataLoaded ?
         <Routes countries={countries} /> :

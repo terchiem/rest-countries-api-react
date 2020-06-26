@@ -1,6 +1,12 @@
 .CountryCard {
   width: 264px;
   height: 335px;
+  background-color: var(--element-color);
+  transition: background-color 0.2s;
+}
+
+.CountryCard:hover {
+  background-color: var(--hover-color);
 }
 
 .CountryCard-link {
