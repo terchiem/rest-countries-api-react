@@ -24,9 +24,9 @@ function CountryDetail({ countries, country }) {
 
   const currencyNames = currencies.map(c => c.name).join(', ');
 
-  const borderCountries = borders.map(b => (
+  const borderCountries = borders.length ? borders.map(b => (
     <Link key={b} to={`/country/${b}`} className="CountryDetail-border">{countries[b].name}</Link>
-  ));
+  )) : "None";
 
   return (
     <div className="CountryDetail">
@@ -40,9 +40,9 @@ function CountryDetail({ countries, country }) {
             <ul>
               <li><span>Native Name:</span> {nativeName}</li>
               <li><span>Population:</span> {addCommas(population)}</li>
-              <li><span>Region:</span> {region}</li>
-              <li><span>Sub Region:</span> {subregion}</li>
-              <li><span>Capital:</span> {capital}</li>
+              <li><span>Region:</span> {region || "—"}</li>
+              <li><span>Sub Region:</span> {subregion || "—"}</li>
+              <li><span>Capital:</span> {capital || "—"}</li>
             </ul>
             <ul>
               <li><span>Top Level Domain:</span> {topLevelDomain}</li>

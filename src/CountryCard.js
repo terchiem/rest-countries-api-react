@@ -20,8 +20,8 @@ function CountryCard({ country }) {
         <div className="CountryCard-detail">
           <h3>{name}</h3>
           <p>Population: {addCommas(population)}</p>
-          <p>Region: {region}</p>
-          <p>Capital: {capital}</p>
+          <p>Region: {region || "—"}</p>
+          <p>Capital: {capital || "—"}</p>
         </div>
       </div>
     </Link>
