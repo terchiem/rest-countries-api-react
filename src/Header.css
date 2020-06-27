@@ -1,6 +1,6 @@
 .Header {
   padding: 20px 0;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
   background-color: var(--element-color);
   transition: background-color 0.2s;
 }

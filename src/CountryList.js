@@ -67,14 +67,17 @@ function CountryList({ countries }) {
             onChange={handleChange}
           />
         </div>
-        <select
-          name="region"
-          id="region"
-          value={filterRegion}
-          onChange={handleSelect}
-        >
-          {["Filter by Region", ...REGIONS].map(r => <option key={r}>{r}</option>)}
-        </select>
+        <div className="CountryList-select">
+          <select
+            name="region"
+            id="region"
+            value={filterRegion}
+            onChange={handleSelect}
+          >
+            {["Filter by Region", ...REGIONS].map(r => <option key={r}>{r}</option>)}
+          </select>
+          <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        </div>
       </div>
 
       <div className="CountryList-container">

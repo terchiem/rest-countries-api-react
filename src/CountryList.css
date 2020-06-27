@@ -31,9 +31,11 @@
 .CountryList-filter select {
   width: 200px;
   padding-left: 20px;
+  appearance: none;
 }
 
-.CountryList-search {
+.CountryList-search,
+.CountryList-select {
   position: relative;
   margin-left: 0;
 }
@@ -44,6 +46,15 @@
   left: 16px;
   top: 16px;
   transition: color 0.5s;
+}
+
+.CountryList-select i {
+  color: var(--input-color);
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  transition: color 0.5s;
+  pointer-events: none;
 }
 
 .CountryList-container {
