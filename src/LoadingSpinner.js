@@ -1,4 +1,5 @@
 import React from 'react';
+import './LoadingSpinner.css';
 
 /**
  * Displayed while fetching data from API
@@ -6,7 +7,9 @@ import React from 'react';
 
 function LoadingSpinner() {
   return (
-    <div className="LoadingSpinner">loading...</div>
+    <div className="LoadingSpinner">
+      <div className="LoadingSpinner-spinner"></div>
+    </div>
   )
 }
 
