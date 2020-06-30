@@ -1,7 +1,6 @@
 .CountryDetail {
   max-width: var(--max-width-desktop);
   margin: 60px auto;
-  padding: 0 30px;
 }
 
 .CountryDetail-back {
@@ -49,6 +48,10 @@
   gap: 20px;
 }
 
+.CountryDetail-lists li {
+  margin-bottom: 6px;
+}
+
 .CountryDetail-border {
   display: inline-block;
   padding: 2px 20px;
@@ -59,10 +62,43 @@
   transition: background-color 0.2s;
 }
 
+.CountryDetail-borders div {
+  margin-top: 4px;
+}
+
 .CountryDetail-border:hover {
   background-color: var(--hover-color);
 }
 
 .CountryDetail span {
   font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .CountryDetail {
+    margin: 20px auto;
+  }
+
+  .CountryDetail-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .CountryDetail-back {
+    margin: 40px 0;
+  }
+
+  .CountryDetail-flag {
+    width: 100%;
+    height: auto;
+  }
+
+  .CountryDetail-details {
+    gap: 40px;
+  }
+
+  .CountryDetail-lists {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }

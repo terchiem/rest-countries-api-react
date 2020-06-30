@@ -1,5 +1,5 @@
 .Header {
-  padding: 20px 0;
+  padding: 20px 30px;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
   background-color: var(--element-color);
   transition: background-color 0.2s;
@@ -8,7 +8,6 @@
 .Header-content {
   max-width: var(--max-width-desktop);
   margin: 0 auto;
-  padding: 0 30px;
   display: flex;
   justify-content: space-between;
 }
@@ -16,4 +15,11 @@
 .Header-theme-toggle {
   font-size: 1.2rem;
   cursor: pointer;
+}
+
+
+@media (max-width: 640px) {
+  .Header {
+    min-width: 380px;
+  }
 }

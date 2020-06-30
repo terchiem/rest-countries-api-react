@@ -68,10 +68,12 @@ function App() {
     <div className="App">
       <Header theme={theme} setTheme={setTheme} />
 
-      {dataLoaded ?
-        <Routes countries={countries} /> :
-        <LoadingSpinner />
-      }
+      <div className="App-container">
+        {dataLoaded ?
+          <Routes countries={countries} /> :
+          <LoadingSpinner />
+        }
+      </div>
     </div>
   );
 }

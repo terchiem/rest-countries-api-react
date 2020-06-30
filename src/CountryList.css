@@ -1,22 +1,21 @@
 .CountryList {
   max-width: var(--max-width-desktop);
-  margin: 40px auto;
-  padding: 0 30px;
+  margin: 50px auto;
   font-size: 14px;
 }
 
 .CountryList-filter {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .CountryList-filter input,
 .CountryList-filter select {
-  height: 3rem;
+  height: 55px;
   border-radius: 4px;
   border: none;
-  box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
   font-size: 16px;
   background-color: var(--element-color);
   color: var(--input-color);
@@ -24,8 +23,8 @@
 }
 
 .CountryList-filter input {
-  min-width: 400px;
-  padding-left: 50px;
+  min-width: 480px;
+  padding-left: 80px;
 }
 
 .CountryList-filter select {
@@ -43,23 +42,75 @@
 .CountryList-search i {
   color: var(--input-color);
   position: absolute;
-  left: 16px;
+  left: 32px;
   top: 16px;
+  font-size: 20px;
   transition: color 0.5s;
 }
 
 .CountryList-select i {
   color: var(--input-color);
-  position: absolute;
-  right: 16px;
-  top: 16px;
+  position: relative;
+  right: 32px;
+  top: 0px;
   transition: color 0.5s;
   pointer-events: none;
 }
 
 .CountryList-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 264px);
+  gap: 75px 0;
   justify-content: space-between;
-  gap: 40px;
+}
+
+@media (max-width: 1160px) {
+  .CountryList-container {
+    grid-template-columns: repeat(3, 264px);
+  }
+}
+
+@media (max-width: 860px) {
+  .CountryList-container {
+    grid-template-columns: repeat(2, 264px);
+  }
+
+  .CountryList-filter {
+    align-items: center;
+  }
+
+  .CountryList-search {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .CountryList-search input {
+    width: 100%;
+    min-width: 30px;
+  }
+
+  .CountryList-select {
+    margin-top: 20px;
+  }
+
+  .CountryList-filter {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .CountryList {
+    max-width: var(--max-width-mobile);
+    min-width: 320px;
+  }
+
+  .CountryList-container {
+    max-width: 264px;
+    margin: 0 auto;
+    grid-template-columns: 264px;
+  }
+
+  .CountryList-container > * {
+    margin-bottom: 0px;
+  }
 }

@@ -1,5 +1,4 @@
 .CountryCard {
-  width: 264px;
   height: 335px;
   background-color: var(--element-color);
   transition: background-color 0.2s;
@@ -11,7 +10,7 @@
 
 .CountryCard-link {
   border-radius: 4px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
 .CountryCard-flag {
@@ -30,4 +29,10 @@
 
 .blank {
   height: 0;
+}
+
+@media (max-width: 900px) {
+  .CountryCard {
+    /* height: 670px; */
+  }
 }
