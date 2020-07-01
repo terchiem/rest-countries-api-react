@@ -4,7 +4,7 @@ import { FETCH_COUNTRIES } from './actionTypes';
 import { fetchCountriesSuccess, fetchCountriesFail } from './actions';
 import { formatCountries } from './utils';
 
-
+/** Saga to fetch countries from API and dispatch to store */
 function *fetchCountries() {
   const BASE_URL = "https://restcountries.eu/rest/v2/all";
 

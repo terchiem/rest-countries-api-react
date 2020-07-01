@@ -13,8 +13,8 @@ function Header({ theme, setTheme }) {
   }
 
   const togglerText = theme === 'light' ?
-    <><i class="fa fa-moon-o" aria-hidden="true"></i> Dark Mode</> :
-    <><i class="fa fa-sun-o" aria-hidden="true"></i> Light Mode</>;
+    <><i className="fa fa-moon-o" aria-hidden="true"></i> Dark Mode</> :
+    <><i className="fa fa-sun-o" aria-hidden="true"></i> Light Mode</>;
 
   return (
     <div className="Header">

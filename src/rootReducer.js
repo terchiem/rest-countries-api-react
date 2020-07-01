@@ -1,14 +1,16 @@
 import produce from 'immer';
-import { FETCH_COUNTRIES, FETCH_COUNTRIES_SUCCESS, FETCH_COUNTRIES_FAIL, FILTER_REGION, FILTER_SEARCH } from "./actionTypes";
+import { FETCH_COUNTRIES, FETCH_COUNTRIES_SUCCESS, FETCH_COUNTRIES_FAIL, CHANGE_SEARCH, CHANGE_REGION } from "./actionTypes";
 
 export const INITIAL_STATE = {
   loading: false,
   error: false,
-  countries: false
+  countries: false,
+  search: '',
+  region: ''
 };
 
-const rootReducer = (state = INITIAL_STATE, action) =>
-  produce(state, draft => {
+function rootReducer(state = INITIAL_STATE, action) {
+  return produce(state, draft => {
     switch (action.type) {
       case FETCH_COUNTRIES:
         draft.loading = true;
@@ -28,19 +30,19 @@ const rootReducer = (state = INITIAL_STATE, action) =>
         draft.error = action.error;
         break;
 
-
-      case FILTER_REGION:
+      case CHANGE_SEARCH:
+        draft.search = action.search;
         break;
 
-      case FILTER_SEARCH:
+      case CHANGE_REGION:
+        draft.region = action.region;
         break;
 
       default:
         return draft;
     }
   });
-
-
+}
 
 
 export default rootReducer;

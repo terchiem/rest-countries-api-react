@@ -1,69 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { fetchCountries } from './actions';
-import axios from 'axios';
-
-import './App.css';
+import { getLoading } from './selectors';
+import { connect } from 'react-redux';
 
 import Header from './Header';
 import Routes from './Routes';
 import LoadingSpinner from './LoadingSpinner';
 import THEME from './themes';
+import './App.css';
 
-const BASE_URL = "https://restcountries.eu/rest/v2/all";
 
 /**
  * Main app for REST Countries. Fetches all country data from API on mount.
  */
 
-function App() {
+function App({ loading, dispatchFetchCountries }) {
 
-  // const [countries, setCountries] = useState({});
-  // const [dataLoaded, setDataLoaded] = useState(false);
   const [theme, setTheme] = useState("light");
-
-  const dispatch = useDispatch();
-  const countries = useSelector(st => st.countries);
-  const dataLoaded = useSelector(st => !st.loading);
-
-  console.log('countries:', countries);
-  console.log('dataLoaded:', dataLoaded);
 
   // fetch all countries from API and format for state
   useEffect(() => {
-    // async function getCountries() {
-    //   try {
-    //     const result = await axios.get(BASE_URL);
-    //     const countriesObj = {};
-
-    //     for (let c of result.data) {
-    //       countriesObj[c.alpha3Code] = {
-    //         name: c.name,
-    //         code: c.alpha3Code,
-    //         nativeName: c.nativeName,
-    //         population: c.population,
-    //         region: c.region,
-    //         subregion: c.subregion,
-    //         capital: c.capital,
-    //         topLevelDomain: c.topLevelDomain,
-    //         currencies: c.currencies,
-    //         languages: c.languages.map(l => l.name),
-    //         borders: c.borders,
-    //         flag: c.flag
-    //       }
-    //     }
-
-    //     setCountries(countriesObj);
-    //     setDataLoaded(true);
-    //   } catch (err) {
-    //     console.error("Something happened!!", err)
-    //   }
-    // }
-
-    // getCountries();
-
-    dispatch(fetchCountries());
-  }, []);
+    dispatchFetchCountries();
+  }, [dispatchFetchCountries]);
 
   // handle theme switching
   useEffect(() => {
@@ -81,13 +39,21 @@ function App() {
       <Header theme={theme} setTheme={setTheme} />
 
       <div className="App-container">
-        {dataLoaded ?
-          <Routes countries={countries} /> :
-          <LoadingSpinner />
+        {loading ?
+          <LoadingSpinner /> :
+          <Routes />
         }
       </div>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => ({ loading: getLoading(state) });
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dispatchFetchCountries: () => { dispatch(fetchCountries()) }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

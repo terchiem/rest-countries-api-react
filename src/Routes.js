@@ -7,12 +7,12 @@ import CountryDetailParams from './CountryDetailParams';
  * Main routes for the app
  */
 
-function Routes({ countries }) {
+function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path='/'><CountryList countries={countries} /></Route>
-        <Route exact path='/country/:code'><CountryDetailParams countries={countries} /></Route>
+        <Route exact path='/'><CountryList /></Route>
+        <Route exact path='/country/:code'><CountryDetailParams /></Route>
         <Redirect to="/" />
       </Switch>
     </BrowserRouter>

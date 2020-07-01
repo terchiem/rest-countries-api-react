@@ -1,4 +1,4 @@
-import { FETCH_COUNTRIES, FETCH_COUNTRIES_SUCCESS, FETCH_COUNTRIES_FAIL, FILTER_REGION, FILTER_SEARCH } from "./actionTypes";
+import { FETCH_COUNTRIES, FETCH_COUNTRIES_SUCCESS, FETCH_COUNTRIES_FAIL, CHANGE_SEARCH, CHANGE_REGION } from "./actionTypes";
 
 export function fetchCountries() {
   return {
@@ -20,16 +20,16 @@ export function fetchCountriesFail(error) {
   };
 }
 
-export function filterRegion(region) {
+export function changeSearch(search) {
   return {
-    type: FILTER_REGION,
-    region
+    type: CHANGE_SEARCH,
+    search
   };
 }
 
-export function filterSearch(search) {
+export function changeRegion(region) {
   return {
-    type: FILTER_SEARCH,
-    search
+    type: CHANGE_REGION,
+    region
   };
 }

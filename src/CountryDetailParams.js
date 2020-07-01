@@ -1,5 +1,8 @@
 import React from 'react';
 import { useParams, Redirect } from 'react-router-dom';
+import { getCountries } from './selectors';
+import { connect } from 'react-redux';
+
 import CountryDetail from './CountryDetail';
 
 /**
@@ -14,4 +17,6 @@ function CountryDetailParams({ countries }) {
     <Redirect to="/" />;
 }
 
-export default CountryDetailParams;
+const mapStateToProps = (state) => ({ countries: getCountries(state) });
+
+export default connect(mapStateToProps)(CountryDetailParams);
