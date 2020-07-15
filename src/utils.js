@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 /** Format integer into string with commas */
 export function addCommas(num) {
   let numStr = num.toString();
@@ -37,4 +39,24 @@ export function formatCountries(countries) {
   }
 
   return countriesObj
+}
+
+
+export function useLocalStorage(key, firstValue = null) {
+  const initialValue = localStorage.getItem(key) || firstValue;
+
+  const [item, setItem] = useState(initialValue);
+
+  useEffect(
+    function setKeyInLocalStorage() {
+      if (item === null) {
+        localStorage.removeItem(key);
+      } else {
+        localStorage.setItem(key, item);
+      }
+    },
+    [key, item]
+  );
+
+  return [item, setItem];
 }

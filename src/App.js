@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchCountries } from './actions';
 import { getLoading } from './selectors';
 import { connect } from 'react-redux';
+import { useLocalStorage } from './utils';
 
 import Header from './Header';
 import Routes from './Routes';
@@ -16,7 +17,7 @@ import './App.css';
 
 function App({ loading, dispatchFetchCountries }) {
 
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useLocalStorage('countries-theme', 'light');
 
   // fetch all countries from API and format for state
   useEffect(() => {
