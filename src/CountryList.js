@@ -60,7 +60,11 @@ function CountryList({ countries, search, filterRegion, onSearchChange, onRegion
       </div>
 
       <div className="CountryList-container">
-        {renderCountries()}
+        {
+          countriesFiltered.length ?
+            renderCountries() :
+            <p className="CountryList-no-result">No results found!</p>
+        }
       </div>
 
     </div>
