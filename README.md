@@ -19,3 +19,4 @@ This is a React Single Page Application that utilizes the [REST Countries API](h
 
 ### Credits
 - Design Mocks by [Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
+- Icons made by [turkkub](https://www.flaticon.com/free-icon/worldwide_814513) from [www.flaticon.com](https://www.flaticon.com/)
